@@ -115,10 +115,26 @@ export default function App() {
   };
 
   // Submit and reveal final result page
-  const handleUnlockResult = (email: string) => {
-    setUserEmail(email);
-    setAppState("results");
-  };
+const handleUnlockResult = async (email: string) => {
+  setUserEmail(email);
+
+  try {
+    await fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email,
+        archetype: calculatedArchetype
+      })
+    });
+  } catch (error) {
+    console.error("Klaviyo error:", error);
+  }
+
+  setAppState("results");
+};
 
   // Restart Quiz
   const handleReset = () => {
