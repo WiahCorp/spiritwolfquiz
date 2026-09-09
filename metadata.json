@@ -1,0 +1,6 @@
+{
+  "name": "Which is Your Spirit Wolf?",
+  "description": "An immersive, cinematic personality quiz that connects your spirit wolf archetype with a real Mexican gray wolf, in partnership with WIAH.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
